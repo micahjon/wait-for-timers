@@ -1,0 +1,11 @@
+{
+  "name": "wait-for-timers",
+  "version": "0.1.0",
+  "description": "Wait for queue of timers (e.g. requestAnimationFrame, requestIdleCallback, setTimeout) to complete before calling a callback",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Micah Engle-Eshleman",
+  "license": "ISC"
+}
