@@ -37,15 +37,15 @@ export default function waitForTimers(
 
   function getTimers() {
     return {
-      raf: (fn) => {
+      raf: (fn: () => void) => {
         const rafId = requestAnimationFrame(fn);
         return () => cancelAnimationFrame(rafId);
       },
-      ric: (fn) => {
+      ric: (fn: () => void) => {
         const ricId = requestIdleCallback(fn);
         return () => cancelIdleCallback(ricId);
       },
-      timeout: (fn, timeoutMs) => {
+      timeout: (fn: () => void, timeoutMs: number) => {
         const timeoutId = setTimeout(fn, timeoutMs);
         return () => clearTimeout(timeoutId);
       },
