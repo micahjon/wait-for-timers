@@ -9,8 +9,20 @@
     "tsc": "tsc -p tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist/**"
+  ],
   "author": "Micah Engle-Eshleman",
   "license": "ISC",
+  "keywords": [
+    "requestIdleCallback",
+    "setTimeout",
+    "requestAnimationFrame",
+    "queue",
+    "timer",
+    "animation",
+    "hooks"
+  ],
   "devDependencies": {
     "typescript": "^4.6.2"
   }
