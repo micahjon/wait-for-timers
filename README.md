@@ -33,8 +33,6 @@ setTimeout(() => {
 
 ```js
 // After
-import waitForTimers from 'wait-for-timers';
-
 waitForTimers([3000, 'ric', 'raf'], () => {
   // Do something
 });
@@ -42,7 +40,7 @@ waitForTimers([3000, 'ric', 'raf'], () => {
 
 ## Cancelling multiple timers
 
-This is where the abstraction really comes in handy...
+This is where the abstraction really comes in handy:
 
 ```js
 // Before
