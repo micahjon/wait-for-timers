@@ -1,6 +1,6 @@
 {
   "name": "wait-for-timers",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Wait for queue of timers (e.g. requestAnimationFrame, requestIdleCallback, setTimeout) to complete before calling a callback",
   "main": "index.ts",
   "module": "./dist/index.js",
