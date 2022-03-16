@@ -1,10 +1,20 @@
 # wait-for-timers
 
-Simple helper function that makes it easy to chain (and cancel) multiple DOM timers, e.g.
+Simple helper function that makes it easy to chain (and cancel) multiple DOM timers with a simple unified API.
 
-- requestAnimationFrame
-- requestIdleCallback
-- setTimeout
+- `requestAnimationFrame`
+- `requestIdleCallback`
+- `setTimeout`
+
+```js
+// TLDR
+import waitForTimers from 'wait-for-timers';
+
+const cancel = waitForTimers([1000, 'ric', 'raf'], () => {
+  // Wait a second, then for browser to be idle, then
+  // for frame to be ready, then do something...
+});
+```
 
 ## Chaining multiple timers
 
@@ -19,9 +29,13 @@ setTimeout(() => {
     });
   });
 }, 3000);
+```
 
+```js
 // After
-waitFortimers([3000, 'raf', 'ric'], () => {
+import waitForTimers from 'wait-for-timers';
+
+waitForTimers([3000, 'ric', 'raf'], () => {
   // Do something
 });
 ```
@@ -42,14 +56,16 @@ timeoutId = setTimeout(() => {
   });
 }, 3000);
 
-const cancelQueueManually = () => {
+const cancelQueue = () => {
   clearTimeout(timeoutId);
   cancelIdleCallback(ricId);
   cancelAnimationFrame(rafId);
 };
+```
 
+```js
 // After
-const cancelQueueSimply = waitFortimers([3000, 'raf', 'ric'], () => {
+const cancelQueue = waitForTimers([3000, 'ric', 'raf'], () => {
   // Do something
 });
 ```
