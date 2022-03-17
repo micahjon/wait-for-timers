@@ -73,20 +73,29 @@ const cancelQueue = waitForTimers([3000, 'ric', 'raf'], () => {
 Great for cancellable animations, e.g.
 
 ```js
-// Toast component
+// Toast component (starts off hidden)
+const [styles, setStyles] = useState({
+  transform: 'translateY(1rem)',
+  opacity: '0',
+});
+
 useLayoutEffect(() => {
   // Fade-in new toast
-  setStyles({ opacity: '1', transform: 'translateY(0px)' });
+  let cancel = waitForTimers(['raf'], () => {
+    setStyles({});
 
-  // Fade-out toast after 3 seconds
-  let cancel = waitForTimers([3000, 'raf'], () => {
-    setStyles({ opacity: '0' });
+    // Fade-out toast after 3 seconds
+    cancel = waitForTimers([3000, 'raf'], () => {
+      setStyles({ opacity: '0' });
 
-    // Remove toast from DOM after fade-out animation completes
-    cancel = waitForTimers([200], () => removeToast());
+      // Remove toast from DOM after fade-out animation completes
+      cancel = waitForTimers([200], () => removeToast());
+    });
   });
 
   // Allow cancellation at any point
   return () => cancel();
 }, []);
+
+return <Toast style={styles}>...</Toast>;
 ```
