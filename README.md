@@ -1,19 +1,27 @@
 # wait-for-timers
 
-Simple helper function that makes it easy to chain (and cancel) multiple DOM timers with a simple unified API.
+[![minzip](https://img.shields.io/bundlephobia/minzip/wait-for-timers.svg)](https://www.npmjs.com/package/wait-for-timers)
+![types](https://img.shields.io/badge/types-typescript-blueviolet)
+
+A tiny utility that makes it easy to chain (and cancel) multiple DOM timers with a simple unified API:
 
 - `requestAnimationFrame`
 - `requestIdleCallback`
 - `setTimeout`
 
 ```js
-// TLDR
 import waitForTimers from 'wait-for-timers';
 
 const cancel = waitForTimers([1000, 'ric', 'raf'], () => {
   // Wait a second, then for browser to be idle, then
   // for frame to be ready, then do something...
 });
+```
+
+Install via npm or yarn:
+
+```bash
+npm install wait-for-timers
 ```
 
 ## Chaining multiple timers
