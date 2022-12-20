@@ -1,5 +1,6 @@
 # wait-for-timers
 
+![npm](https://img.shields.io/npm/v/wait-for-timers.svg)](https://www.npmjs.com/package/wait-for-timers)
 [![minzip](https://img.shields.io/bundlephobia/minzip/wait-for-timers.svg)](https://www.npmjs.com/package/wait-for-timers)
 ![types](https://img.shields.io/badge/types-typescript-blueviolet)
 
