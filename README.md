@@ -6,9 +6,9 @@
 
 A tiny utility that makes it easy to chain (and cancel) multiple DOM timers with a simple unified API:
 
-- `requestAnimationFrame`
-- `requestIdleCallback`
-- `setTimeout`
+- `requestAnimationFrame -> "raf"`
+- `requestIdleCallback -> "ric"`
+- `setTimeout -> ms`
 
 ```js
 import waitForTimers from 'wait-for-timers';
