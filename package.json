@@ -14,7 +14,7 @@
     "dist/**"
   ],
   "author": "Micah Engle-Eshleman",
-  "license": "ISC",
+  "license": "MIT",
   "keywords": [
     "requestIdleCallback",
     "setTimeout",
